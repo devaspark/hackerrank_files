@@ -1,0 +1,25 @@
+
+class Matrix {
+    public:
+    vector<vector<int>> a;
+    
+    Matrix operator+(const Matrix& b)
+        {
+        int rows = b.a.size();
+        int columns = b.a[0].size();
+        Matrix c;
+       
+        for(int i=0; i<rows; i++){
+            vector<int> temp_vec;
+            int temp;
+            for (int j=0; j< columns; ++j){
+                temp=this->a[i][j]+b.a[i][j];
+                temp_vec.push_back(temp);
+            }
+            c.a.push_back(temp_vec);
+        }
+        return c;
+    }
+    
+};
+
